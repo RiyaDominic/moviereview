@@ -1,0 +1,61 @@
+<!-- view_reviews.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <h1>Ratings for {{ movie.name }}</h1>
+    {% if average_rating %}
+    <div class="rating-container">
+        <h5>Average Rating:</h5>
+        <div class="stars">
+            {% for _ in "x"|rjust:average_rating %}
+            <i class="fas fa-star"></i>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <p>No Ratings</p>
+{% endif %}
+    {% if reviews %}
+
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            {% for review in reviews %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h5 class="card-title">User: {{ review.user }}</h5>
+                        <h5 class="card-title"> 
+                            <span class="stars">
+                                {% for _ in review.stars %}
+                                    <i class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for _ in review.empty_stars %}
+                                    <i class="far fa-star"></i>
+                                {% endfor %}
+                            </span>
+                        </h5>
+                        
+                        
+                        <h6>Comments: {{ review.comment }}</h6>
+                        <p class="card-text text-muted">{{ review.created_at }}</p>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p>No ratings available for this movie.</p>
+    {% endif %}
+    <a class="btn btn-primary" aria-current="page" href="{% url 'taskapp:add_movies' %}">Add Movie</a>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

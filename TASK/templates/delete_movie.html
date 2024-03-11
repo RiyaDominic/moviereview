@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container text-center mt-5">
+        <h4 >Are yo sure to delete this movie?</h4>
+    <input type="submit" class="btn btn-primary ">
+    </div>
+
+</form>
+{% endblock %}

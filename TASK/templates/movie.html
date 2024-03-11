@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {{ movie.description|truncatewords:155 }}
+{% endblock %}
+{% block title %}
+    {{ movie.name }} - Our Store
+{% endblock %}
+{% block content %}
+<div class="container-fluid mt-5">
+    <div class="row">
+        <h1 class="myheading"><b><u>{{ movie.name }}</u></b></h1>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="{{ movie.image.url }}" alt="{{ movie.name }}" width="300" height="300">
+        </div>
+        <div class="col-md-6">
+    
+          
+<p class="movie-info"><small>Movie name:</small> <span>{{ movie.name }}</span></p>          
+<p class="movie-info"><small>Description:</small> <span>{{ movie.description }}</span></p>
+<p class="movie-info"><small>Release Date:</small> <span>{{ movie.release_date }}</span></p>
+<p class="movie-info"><small>Actors:</small> <span>{{ movie.actors }}</span></p>
+<p class="movie-info"><small>Category:</small> <span>{{ movie.category }}</span></p>
+<p class="movie-info"><small>Trailer Link:</small> <span><a href="{{ movie.trailer_link }}" target="_blank">Watch Trailer</a></span></p>
+
+            {% if user.is_authenticated %}
+                {% if movie.user == user %}
+                    <div>
+                        <a class="btn btn-primary" href="{% url 'taskapp:edit_movie' movie.id %}">Edit</a>&nbsp;
+                        <a class="btn btn-danger mx-3" href="{% url 'taskapp:delete_movie' movie.id %}">DELETE</a>
+                    </div>       
+                
+            {% else %}
+            <a class="btn btn-info mx-3" href="{% url 'taskapp:add_review' movie.id %}">Add a Review</a>
+            
+           
+            {% endif %}
+            
+            {% endif %}
+            
+            <a class="btn btn-dark m-3" href="{% url 'taskapp:view_reviews' movie.id %}">View Reviews</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

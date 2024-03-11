@@ -1,0 +1,115 @@
+body{
+    background-color: rgb(247, 247, 247);
+   
+}
+.my_container{
+    min-height: 550px!important;
+}
+.nav-item,.dropdown-menu{
+    font-weight: bolder;
+    font-size:large;
+    font-family: "Poppins", sans-serif;
+}
+.dropdown-item:hover{
+    background-color: blue;
+    color:white;
+}
+.banner-text p {
+    font-size: larger;
+}
+
+.banner-text h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 14px;
+}
+
+.category h1{
+ text-align: center;
+ color: #370ddc;
+}
+.category p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.my-custom-margin {
+    margin-bottom: 10px; 
+}
+.my_search_text{
+padding-top:20px;
+}
+.my_search{
+    min-height: 300px;
+}
+
+
+.custom a{
+    color: #000;
+    text-decoration: none;
+}
+.my_footer {
+    position:relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    }
+.rating-container {
+        display: inline-flex;
+        align-items: center;
+    }
+    
+.stars {
+        margin-left: 5px;
+        color: gold; /* Adjust as needed */
+    }
+    
+.star {
+        color: gold; /* Adjust color as needed */
+        font-size: 1.2em; /* Adjust size as needed */
+    }
+    
+/* Define styles for the movie-info class */
+.movie-info {
+    margin-bottom: 10px; /* Add some spacing between each movie info item */
+}
+
+.movie-info small {
+    font-size: 0.8em; /* Adjust the font size for the labels */
+    margin-right: 5px; /* Add some spacing between the label and the value */
+}
+
+.movie-info span {
+    font-size: 1.2em; 
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bold/* Adjust the font size for the values */
+}
+.myheading{
+    color: rgb(5, 5, 87);
+    margin-left: 30px;
+}
+.myimagelogo{
+    width: 50px; /* Adjust width as needed */
+    height: auto;
+    border-radius: 50%;
+}
+.navbar{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-item{
+    color: white;
+}
+.navbar-nav .btn-primary {
+    margin-right: 10px;
+    font-weight: bolder;
+    margin-top: 3px; /* Add some space between the buttons */
+  }
+  
+  /* Style for the "Welcome" message */
+  .navbar-nav .nav-link.dropdown-toggle b {
+    font-size: 1.1em; /* Increase the font size */
+    color: #ffffff; /* Change the text color */
+  }
+  .navbar-nav .nav-link.dropdown-toggle small {
+    font-size: 0.8em; /* Decrease the font size */
+    color: #aaaaaa; /* Change the text color */
+  }

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">Add Movie</h1>
+    <div class="card shadow p-4">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_name" class="form-label">Name:</label>
+                {{ movie_form.name }}
+            </div>
+            <div class="mb-3">
+                <label for="id_description" class="form-label">Description:</label>
+                {{ movie_form.description }}
+            </div>
+            <div class="mb-3">
+                <label for="id_category" class="form-label">Category:</label>
+                {{ movie_form.category }}
+            </div>
+            <div class="mb-3">
+                <label for="id_image" class="form-label">Image:</label>
+                {{ movie_form.image }}
+            </div>
+            <div class="mb-3">
+                <label for="id_release_date" class="form-label">Release Date:</label>
+                {{ movie_form.release_date }}
+            </div>
+            <div class="mb-3">
+                <label for="id_actors" class="form-label">Actors:</label>
+                {{ movie_form.actors }}
+            </div>
+            <div class="mb-3">
+                <label for="id_trailer_link" class="form-label">Trailer Link:</label>
+                {{ movie_form.trailer_link }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
